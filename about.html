@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Spring Tide Strategies</title>
+<meta name="description" content="Meet Matt Grimison, President and Founder of Spring Tide Strategies. 32 years of strategic communication leadership in aerospace, defense, PR and brand storytelling.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy:  #0a1628;
+    --deep:  #0d1f3c;
+    --tide:  #0e4d6e;
+    --ocean: #1a7fa6;
+    --aqua:  #3ec6c6;
+    --foam:  #d4f1f4;
+    --sand:  #f5ede0;
+    --cream: #faf7f2;
+    --gold:  #c9a84c;
+    --white: #ffffff;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--navy);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 1rem 4rem;
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(10,22,40,0.95);
+    backdrop-filter: blur(12px);
+  }
+  .nav-logo { display: flex; align-items: center; text-decoration: none; }
+  .nav-logo img { height: 120px; width: auto; filter: drop-shadow(0 2px 12px rgba(62,198,198,0.25)); }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    color: rgba(255,255,255,0.8); text-decoration: none;
+    font-size: 0.85rem; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--aqua); }
+  .nav-cta {
+    background: transparent; border: 1px solid var(--aqua);
+    color: var(--aqua) !important; padding: 0.5rem 1.3rem; border-radius: 2px;
+    transition: background 0.2s, color 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--aqua) !important; color: var(--navy) !important; }
+
+  /* PAGE HERO */
+  .page-hero {
+    min-height: 40vh;
+    display: flex; align-items: flex-end; justify-content: center;
+    background: var(--navy);
+    padding: 160px 4rem 4rem;
+    position: relative; overflow: hidden;
+  }
+  .page-hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 40% 60%, rgba(14,77,110,0.5) 0%, transparent 70%);
+  }
+  .page-hero-inner { position: relative; text-align: center; }
+  .page-eyebrow {
+    font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--aqua); margin-bottom: 1rem; font-weight: 500;
+  }
+  .page-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 300; line-height: 1.05; color: var(--white);
+  }
+  .page-title em { font-style: italic; color: var(--aqua); }
+
+  /* ABOUT CONTENT */
+  .about-wrap {
+    max-width: 1100px; margin: 0 auto;
+    padding: 6rem 4rem;
+    display: grid; grid-template-columns: 2fr 3fr; gap: 5rem; align-items: start;
+  }
+
+  /* PORTRAIT */
+  .about-portrait {
+    position: sticky; top: 9rem;
+    background: linear-gradient(160deg, var(--tide), var(--navy));
+    border-radius: 4px; aspect-ratio: 3/4; overflow: hidden;
+  }
+  .about-portrait img {
+    width: 100%; height: 100%; object-fit: cover; object-position: top; display: block;
+  }
+  .portrait-card {
+    position: absolute; bottom: 1.5rem; left: 1.5rem; right: 1.5rem;
+    background: rgba(0,0,0,0.5); backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; padding: 1.2rem;
+  }
+  .portrait-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 400; color: var(--white); margin-bottom: 0.2rem;
+  }
+  .portrait-title { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--aqua); }
+
+  /* TEXT */
+  .about-content { padding-top: 0.5rem; }
+  .intro-label {
+    font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--ocean); margin-bottom: 1rem; font-weight: 500;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 400; line-height: 1.15; color: var(--navy); margin-bottom: 1.5rem;
+  }
+  .section-title em { font-style: italic; color: var(--ocean); }
+  .body-text { font-size: 1rem; line-height: 1.8; color: #3a4a5c; font-weight: 300; }
+  .body-text + .body-text { margin-top: 1rem; }
+
+  .credentials { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 2rem 0; }
+  .cred-tag {
+    background: var(--foam); color: var(--tide);
+    padding: 0.35rem 0.85rem; border-radius: 2px;
+    font-size: 0.75rem; font-weight: 500; letter-spacing: 0.05em;
+  }
+
+  /* BACK LINK */
+  .back-bar {
+    background: var(--navy); padding: 2rem 4rem;
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .back-link {
+    color: var(--aqua); text-decoration: none;
+    font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    transition: gap 0.2s;
+  }
+  .back-link:hover { gap: 0.8rem; }
+
+  /* FOOTER */
+  footer {
+    background: #060e1a; padding: 2rem 4rem;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: rgba(255,255,255,0.4); font-weight: 300; }
+  .footer-copy { font-size: 0.72rem; color: rgba(255,255,255,0.25); letter-spacing: 0.05em; }
+
+  /* REVEAL */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 0.8rem 1.5rem; }
+    .nav-logo img { height: 80px; }
+    .page-hero { padding: 120px 1.5rem 3rem; }
+    .about-wrap { grid-template-columns: 1fr; gap: 2.5rem; padding: 3rem 1.5rem; }
+    .about-portrait { position: relative; top: auto; aspect-ratio: 4/3; }
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 1.5rem; }
+    .back-bar { padding: 1.5rem; }
+  }
+  @media (max-width: 600px) {
+    .nav-links { display: none; }
+    .nav-logo img { height: 64px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="https://images.squarespace-cdn.com/content/v1/67feaddaf6b3024d6d2f3d3e/4e58b5e7-a3f8-42f4-9fb5-986237a420a5/Spring+Tide+Strategies+logo+concepts+v2-02.png?format=1500w" alt="Spring Tide Strategies">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="index.html#expertise">Expertise</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Connect</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p class="page-eyebrow">Our Founder</p>
+    <h1 class="page-title">32 Years of<br><em>Communication Leadership</em></h1>
+  </div>
+</div>
+
+<!-- ABOUT CONTENT -->
+<div class="about-wrap">
+  <div class="about-portrait reveal">
+    <img src="Headshot.jpg" alt="Matt Grimison, President and Founder of Spring Tide Strategies">
+    <div class="portrait-card">
+      <div class="portrait-name">Matt Grimison</div>
+      <div class="portrait-title">President and Founder</div>
+    </div>
+  </div>
+  <div class="about-content">
+    <p class="intro-label reveal">Spring Tide Strategies</p>
+    <h2 class="section-title reveal">Meet <em>Matt Grimison</em></h2>
+    <p class="body-text reveal">
+      Many companies don't fully recognize the value of strategic communication — especially small businesses and startups. And how much are they leaving on the table because of that? Spring Tide Strategies launched to change all that, providing complete strategic communication consultation and connecting companies with their customers.
+    </p>
+    <p class="body-text reveal" style="margin-top:1rem;">
+      Grimison is a seasoned strategic communication leader with 32 years of varied experience, including 22 years in the aerospace and defense industry. He has worked for the Aerospace Industries Association, The Boeing Company and L3Harris Technologies, preceded by a decade as a print reporter in Florida.
+    </p>
+    <p class="body-text reveal" style="margin-top:1rem;">
+      In 2004, Grimison earned a prestigious Congressional Fellowship with the American Political Science Association, working directly on policy in the House of Representatives. He is a brand storytelling trainer who helps companies paint their picture in vibrant, engaging ways.
+    </p>
+    <div class="credentials reveal reveal-delay-1">
+      <span class="cred-tag">Aerospace Industries Association</span>
+      <span class="cred-tag">The Boeing Company</span>
+      <span class="cred-tag">L3Harris Technologies</span>
+      <span class="cred-tag">APSA Congressional Fellow</span>
+      <span class="cred-tag">Florida State University</span>
+      <span class="cred-tag">Florida A and M — Journalism</span>
+      <span class="cred-tag">Florida's Space Coast</span>
+    </div>
+  </div>
+</div>
+
+<!-- BACK TO SITE -->
+<div class="back-bar">
+  <a href="index.html" class="back-link">&#8592; Back to Spring Tide Strategies</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Spring Tide Strategies, LLC</div>
+  <div class="footer-copy">© 2025 Spring Tide Strategies. All rights reserved.</div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
