@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Spring Tide Strategies</title>
+<meta name="description" content="Meet Matt Grimison, President and Founder of Spring Tide Strategies. 32 years of strategic communication leadership in aerospace, defense, PR and brand storytelling.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy:  #0a1628;
+    --deep:  #0d1f3c;
+    --tide:  #0e4d6e;
+    --ocean: #1a7fa6;
+    --aqua:  #3ec6c6;
+    --foam:  #d4f1f4;
+    --sand:  #f5ede0;
+    --cream: #faf7f2;
+    --gold:  #c9a84c;
+    --white: #ffffff;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--navy);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 1rem 4rem;
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(10,22,40,0.95);
+    backdrop-filter: blur(12px);
+  }
+  .nav-logo { display: flex; align-items: center; text-decoration: none; }
+  .nav-logo img { height: 120px; width: auto; filter: drop-shadow(0 2px 12px rgba(62,198,198,0.25)); }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    color: rgba(255,255,255,0.8); text-decoration: none;
+    font-size: 0.85rem; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--aqua); }
+  .nav-cta {
+    background: transparent; border: 1px solid var(--aqua);
+    color: var(--aqua) !important; padding: 0.5rem 1.3rem; border-radius: 2px;
+    transition: background 0.2s, color 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--aqua) !important; color: var(--navy) !important; }
+
+  /* PAGE HERO */
+  .page-hero {
+    min-height: 40vh;
+    display: flex; align-items: flex-end; justify-content: center;
+    background: var(--navy);
+    padding: 160px 4rem 4rem;
+    position: relative; overflow: hidden;
+  }
+  .page-hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 40% 60%, rgba(14,77,110,0.5) 0%, transparent 70%);
+  }
+  .page-hero-inner { position: relative; text-align: center; }
+  .page-eyebrow {
+    font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--aqua); margin-bottom: 1rem; font-weight: 500;
+  }
+  .page-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 300; line-height: 1.05; color: var(--white);
+  }
+  .page-title em { font-style: italic; color: var(--aqua); }
+
+  /* ABOUT CONTENT */
+  .about-wrap {
+    max-width: 1100px; margin: 0 auto;
+    padding: 6rem 4rem;
+    display: grid; grid-template-columns: 2fr 3fr; gap: 5rem; align-items: start;
+  }
+
+  /* PORTRAIT */
+  .about-portrait {
+    position: sticky; top: 9rem;
+    background: linear-gradient(160deg, var(--tide), var(--navy));
+    border-radius: 4px; aspect-ratio: 3/4; overflow: hidden;
+  }
+  .about-portrait img {
+    width: 100%; height: 100%; object-fit: cover; object-position: top; display: block;
+  }
+  .portrait-card {
+    position: absolute; bottom: 1.5rem; left: 1.5rem; right: 1.5rem;
+    background: rgba(0,0,0,0.5); backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; padding: 1.2rem;
+  }
+  .portrait-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 400; color: var(--white); margin-bottom: 0.2rem;
+  }
+  .portrait-title { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--aqua); }
+
+  /* TEXT */
+  .about-content { padding-top: 0.5rem; }
+  .intro-label {
+    font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--ocean); margin-bottom: 1rem; font-weight: 500;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 400; line-height: 1.15; color: var(--navy); margin-bottom: 1.5rem;
+  }
+  .section-title em { font-style: italic; color: var(--ocean); }
+  .body-text { font-size: 1rem; line-height: 1.8; color: #3a4a5c; font-weight: 300; }
+  .body-text + .body-text { margin-top: 1rem; }
+
+  .credentials { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 2rem 0; }
+  .cred-tag {
+    background: var(--foam); color: var(--tide);
+    padding: 0.35rem 0.85rem; border-radius: 2px;
+    font-size: 0.75rem; font-weight: 500; letter-spacing: 0.05em;
+  }
+
+  /* BACK LINK */
+  .back-bar {
+    background: var(--navy); padding: 2rem 4rem;
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .back-link {
+    color: var(--aqua); text-decoration: none;
+    font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    transition: gap 0.2s;
+  }
+  .back-link:hover { gap: 0.8rem; }
+
+  /* FOOTER */
+  footer {
+    background: #060e1a; padding: 2rem 4rem;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: rgba(255,255,255,0.4); font-weight: 300; }
+  .footer-copy { font-size: 0.72rem; color: rgba(255,255,255,0.25); letter-spacing: 0.05em; }
+
+  /* REVEAL */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 0.8rem 1.5rem; }
+    .nav-logo img { height: 80px; }
+    .page-hero { padding: 120px 1.5rem 3rem; }
+    .about-wrap { grid-template-columns: 1fr; gap: 2.5rem; padding: 3rem 1.5rem; }
+    .about-portrait { position: relative; top: auto; aspect-ratio: 4/3; }
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 1.5rem; }
+    .back-bar { padding: 1.5rem; }
+  }
+  @media (max-width: 600px) {
+    .nav-links { display: none; }
+    .nav-logo img { height: 64px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="https://images.squarespace-cdn.com/content/v1/67feaddaf6b3024d6d2f3d3e/4e58b5e7-a3f8-42f4-9fb5-986237a420a5/Spring+Tide+Strategies+logo+concepts+v2-02.png?format=1500w" alt="Spring Tide Strategies">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="index.html#expertise">Expertise</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Connect</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p class="page-eyebrow">Our Founder</p>
+    <h1 class="page-title">32 Years of<br><em>Communication Leadership</em></h1>
+  </div>
+</div>
+
+<!-- ABOUT CONTENT -->
+<div class="about-wrap">
+  <div class="about-portrait reveal">
+    <img src="Headshot.jpg" alt="Matt Grimison, President and Founder of Spring Tide Strategies">
+    <div class="portrait-card">
+      <div class="portrait-name">Matt Grimison</div>
+      <div class="portrait-title">President and Founder</div>
+    </div>
+  </div>
+  <div class="about-content">
+    <p class="intro-label reveal">Spring Tide Strategies</p>
+    <h2 class="section-title reveal">Meet <em>Matt Grimison</em></h2>
+    <p class="body-text reveal">
+      Many companies don't fully recognize the value of strategic communication — especially small businesses and startups. And how much are they leaving on the table because of that? Spring Tide Strategies launched to change all that, providing complete strategic communication consultation and connecting companies with their customers.
+    </p>
+    <p class="body-text reveal" style="margin-top:1rem;">
+      Grimison is a seasoned strategic communication leader with 32 years of varied experience, including 22 years in the aerospace and defense industry. He has worked for the Aerospace Industries Association, The Boeing Company and L3Harris Technologies, preceded by a decade as a print reporter in Florida.
+    </p>
+    <p class="body-text reveal" style="margin-top:1rem;">
+      In 2004, Grimison earned a prestigious Congressional Fellowship with the American Political Science Association, working directly on policy in the House of Representatives. He is a brand storytelling trainer who helps companies paint their picture in vibrant, engaging ways.
+    </p>
+    <div class="credentials reveal reveal-delay-1">
+      <span class="cred-tag">Aerospace Industries Association</span>
+      <span class="cred-tag">The Boeing Company</span>
+      <span class="cred-tag">L3Harris Technologies</span>
+      <span class="cred-tag">APSA Congressional Fellow</span>
+      <span class="cred-tag">Florida State University</span>
+      <span class="cred-tag">Florida A and M — Journalism</span>
+      <span class="cred-tag">Florida's Space Coast</span>
+    </div>
+  </div>
+</div>
+
+<!-- BACK TO SITE -->
+<div class="back-bar">
+  <a href="index.html" class="back-link">&#8592; Back to Spring Tide Strategies</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Spring Tide Strategies, LLC</div>
+  <div class="footer-copy">© 2025 Spring Tide Strategies. All rights reserved.</div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spring Tide Strategies — Amplify Your Message</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy:    #0a1628;
+    --deep:    #0d1f3c;
+    --tide:    #0e4d6e;
+    --ocean:   #1a7fa6;
+    --aqua:    #3ec6c6;
+    --foam:    #d4f1f4;
+    --sand:    #f5ede0;
+    --cream:   #faf7f2;
+    --gold:    #c9a84c;
+    --white:   #ffffff;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--navy);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 1rem 4rem;
+    display: flex; align-items: center; justify-content: space-between;
+    transition: background 0.4s, backdrop-filter 0.4s;
+  }
+  nav.scrolled {
+    background: rgba(10,22,40,0.92);
+    backdrop-filter: blur(12px);
+  }
+  .nav-logo { display: flex; align-items: center; text-decoration: none; }
+  .nav-logo img { height: 180px; width: auto; filter: drop-shadow(0 2px 12px rgba(62,198,198,0.25)); }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    color: rgba(255,255,255,0.8); text-decoration: none;
+    font-size: 0.85rem; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--aqua); }
+  .nav-cta {
+    background: transparent; border: 1px solid var(--aqua);
+    color: var(--aqua) !important; padding: 0.5rem 1.3rem; border-radius: 2px;
+    transition: background 0.2s, color 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--aqua) !important; color: var(--navy) !important; }
+
+  /* HERO — top padding keeps content below the tall logo */
+  #hero {
+    position: relative; min-height: 100vh;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    background: var(--navy); overflow: hidden;
+    padding-top: 210px;
+  }
+  .hero-video {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%; object-fit: cover; opacity: 0.45;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, rgba(10,22,40,0.55) 0%, rgba(10,22,40,0.3) 50%, rgba(10,22,40,0.85) 100%),
+                radial-gradient(ellipse 80% 60% at 60% 40%, rgba(14,77,110,0.45) 0%, transparent 70%);
+  }
+  .hero-wave { position: absolute; bottom: -2px; left: 0; width: 100%; pointer-events: none; }
+  .wave-path-1 { animation: waveShift 8s ease-in-out infinite; }
+  .wave-path-2 { animation: waveShift 11s ease-in-out infinite reverse; opacity: 0.5; }
+  @keyframes waveShift {
+    0%, 100% { d: path("M0,60 C200,20 400,90 600,50 C800,10 1000,70 1200,40 C1400,10 1600,70 1440,60 L1440,120 L0,120 Z"); }
+    50%       { d: path("M0,40 C200,80 400,20 600,60 C800,100 1000,30 1200,60 C1400,90 1600,20 1440,40 L1440,120 L0,120 Z"); }
+  }
+  .hero-content {
+    position: relative; text-align: center;
+    max-width: 900px; padding: 0 2rem;
+    opacity: 0; transform: translateY(30px);
+    animation: fadeUp 1s 0.3s ease forwards;
+  }
+  @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+  /* Tagline — increased 25% from 0.75rem to 0.94rem */
+  .hero-eyebrow {
+    font-size: 0.94rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--aqua); margin-bottom: 1.5rem; font-weight: 500;
+  }
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 7vw, 6rem);
+    font-weight: 300; line-height: 1.05;
+    color: var(--white); margin-bottom: 1.8rem;
+  }
+  .hero-title em { font-style: italic; color: var(--aqua); }
+  .hero-sub {
+    font-size: 1.05rem; line-height: 1.7; font-weight: 300;
+    color: rgba(255,255,255,0.65); max-width: 600px; margin: 0 auto 2.5rem;
+  }
+  .btn-primary {
+    display: inline-block; padding: 0.85rem 2.2rem;
+    background: var(--aqua); color: var(--navy);
+    font-size: 0.85rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+    text-decoration: none; border-radius: 2px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(62,198,198,0.35); }
+
+  /* SECTIONS */
+  section { padding: 6rem 4rem; }
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  /* INTRO */
+  #intro { background: var(--cream); }
+  .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .intro-label {
+    font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--ocean); margin-bottom: 1rem; font-weight: 500;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 400; line-height: 1.15; color: var(--navy); margin-bottom: 1.5rem;
+  }
+  .section-title em { font-style: italic; color: var(--ocean); }
+  .body-text { font-size: 1rem; line-height: 1.8; color: #3a4a5c; font-weight: 300; }
+  .body-text + .body-text { margin-top: 1rem; }
+
+  .intro-visual { position: relative; border-radius: 4px; overflow: hidden; aspect-ratio: 4/5; }
+  .intro-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .intro-visual-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(10,22,40,0.85) 0%, transparent 50%);
+  }
+  .tide-stat-group { position: absolute; bottom: 2rem; left: 2rem; right: 2rem; display: flex; gap: 1rem; }
+  .tide-stat {
+    flex: 1; background: rgba(255,255,255,0.07);
+    backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 4px; padding: 1.2rem; text-align: center;
+  }
+  .tide-stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem; font-weight: 600; color: var(--aqua); line-height: 1;
+  }
+  .tide-stat-label {
+    font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: rgba(255,255,255,0.55); margin-top: 0.4rem;
+  }
+
+  /* SERVICES */
+  #services { background: var(--navy); position: relative; overflow: hidden; }
+  #services::before {
+    content: ''; position: absolute; top: -200px; right: -200px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(62,198,198,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .services-header { text-align: center; margin-bottom: 4rem; }
+  .services-header .section-title { color: var(--white); }
+  .services-header .section-title em { color: var(--aqua); }
+  .services-header .intro-label { color: var(--aqua); }
+  .services-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px; background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.06); border-radius: 4px; overflow: hidden;
+  }
+  .service-card {
+    background: var(--deep); padding: 2.2rem 2rem;
+    transition: background 0.3s; position: relative; overflow: hidden;
+  }
+  .service-card::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+    background: var(--aqua); transform: scaleX(0); transform-origin: left; transition: transform 0.3s ease;
+  }
+  .service-card:hover { background: rgba(14,77,110,0.4); }
+  .service-card:hover::after { transform: scaleX(1); }
+  .service-num {
+    font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300;
+    color: rgba(62,198,198,0.15); line-height: 1; margin-bottom: 1rem;
+  }
+  .service-name { font-size: 0.9rem; font-weight: 500; color: var(--white); line-height: 1.4; margin-bottom: 0.5rem; }
+  .service-desc { font-size: 0.8rem; color: rgba(255,255,255,0.45); line-height: 1.6; font-weight: 300; }
+
+  /* AI SECTION */
+  #ai { background: var(--sand); position: relative; }
+  .ai-bg-image { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0.07; }
+  .ai-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .ai-badge {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    background: var(--navy); color: var(--aqua); padding: 0.4rem 1rem; border-radius: 100px;
+    font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; margin-bottom: 1.5rem;
+  }
+  .ai-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--aqua); animation: pulse 2s infinite; }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+  /* ABOUT */
+  #about { background: var(--white); }
+  .about-grid { display: grid; grid-template-columns: 2fr 3fr; gap: 5rem; align-items: start; }
+  .about-portrait {
+    position: sticky; top: 7rem;
+    background: linear-gradient(160deg, var(--tide), var(--navy));
+    border-radius: 4px; aspect-ratio: 3/4;
+    display: flex; align-items: flex-end; justify-content: center; overflow: hidden;
+  }
+  .about-portrait img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+  .portrait-card {
+    position: absolute; bottom: 1.5rem; left: 1.5rem; right: 1.5rem;
+    background: rgba(0,0,0,0.5); backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; padding: 1.2rem;
+  }
+  .portrait-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 400; color: var(--white); margin-bottom: 0.2rem;
+  }
+  .portrait-title { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--aqua); }
+  .about-content { padding-top: 0.5rem; }
+  .credentials { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 2rem 0; }
+  .cred-tag {
+    background: var(--foam); color: var(--tide);
+    padding: 0.35rem 0.85rem; border-radius: 2px; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.05em;
+  }
+
+  /* EXPERTISE with shell background */
+  #expertise { position: relative; overflow: hidden; padding: 6rem 4rem; }
+  .expertise-bg {
+    position: absolute; inset: 0;
+    background-size: cover; background-position: center; opacity: 0.18;
+  }
+  .expertise-overlay { position: absolute; inset: 0; background: rgba(250,247,242,0.85); }
+  .expertise-inner { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; }
+  .expertise-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 3rem;
+  }
+  .exp-card {
+    padding: 1.8rem 1.5rem; border: 1px solid rgba(10,22,40,0.1); border-radius: 4px;
+    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    background: rgba(255,255,255,0.92);
+  }
+  .exp-card:hover { border-color: var(--ocean); transform: translateY(-4px); box-shadow: 0 12px 30px rgba(10,22,40,0.08); }
+  .exp-icon { font-size: 1.8rem; margin-bottom: 1rem; }
+  .exp-name { font-size: 0.9rem; font-weight: 500; color: var(--navy); line-height: 1.4; }
+
+  /* CONTACT */
+  #contact { background: var(--navy); text-align: center; position: relative; overflow: hidden; }
+  #contact::before {
+    content: ''; position: absolute; bottom: -300px; left: 50%; transform: translateX(-50%);
+    width: 800px; height: 800px; background: radial-gradient(circle, rgba(62,198,198,0.08) 0%, transparent 65%);
+  }
+  #contact .section-title { color: var(--white); }
+  #contact .section-title em { color: var(--aqua); }
+  .contact-sub { color: rgba(255,255,255,0.55); font-size: 1rem; font-weight: 300; max-width: 500px; margin: 0 auto 2.5rem; line-height: 1.7; }
+  .contact-details { display: flex; justify-content: center; gap: 3rem; margin-top: 3rem; flex-wrap: wrap; }
+  .contact-item { text-align: center; }
+  .contact-label { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--aqua); margin-bottom: 0.4rem; }
+  .contact-value { font-size: 0.95rem; color: rgba(255,255,255,0.8); font-weight: 300; }
+  .contact-value a { color: inherit; text-decoration: none; }
+  .contact-value a:hover { color: var(--aqua); }
+
+  /* FOOTER */
+  footer { background: #060e1a; padding: 2rem 4rem; display: flex; align-items: center; justify-content: space-between; }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: rgba(255,255,255,0.4); font-weight: 300; }
+  .footer-copy { font-size: 0.72rem; color: rgba(255,255,255,0.25); letter-spacing: 0.05em; }
+
+  /* SCROLL REVEAL */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-logo img { height: 100px; }
+    #hero { padding-top: 120px; }
+    section { padding: 4rem 1.5rem; }
+    #expertise { padding: 4rem 1.5rem; }
+    .intro-grid, .ai-grid, .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .expertise-grid { grid-template-columns: 1fr 1fr; }
+    .about-portrait { position: relative; top: auto; aspect-ratio: 4/3; }
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 1.5rem; }
+    .contact-details { gap: 2rem; }
+  }
+  @media (max-width: 600px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .expertise-grid { grid-template-columns: 1fr 1fr; }
+    .hero-title { font-size: 2.8rem; }
+    .nav-links { display: none; }
+    .nav-logo img { height: 80px; }
+    #hero { padding-top: 100px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="#hero" class="nav-logo">
+    <img src="https://images.squarespace-cdn.com/content/v1/67feaddaf6b3024d6d2f3d3e/4e58b5e7-a3f8-42f4-9fb5-986237a420a5/Spring+Tide+Strategies+logo+concepts+v2-02.png?format=1500w" alt="Spring Tide Strategies">
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="#expertise">Expertise</a></li>
+    <li><a href="#contact" class="nav-cta">Connect</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="Sunrise_image_video.mp4" type="video/mp4">
+  </video>
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Comprehensive Strategic Communication and Marketing</p>
+    <h1 class="hero-title">
+      Harness the<br><em>Gravitational Pull</em><br>of Perfect Alignment
+    </h1>
+    <p class="hero-sub">
+      When brand purpose, storytelling and platform strategy pull in the same direction, a surge of influence follows. That's the spring tide effect.
+    </p>
+    <a href="#contact" class="btn-primary">Start the Conversation</a>
+  </div>
+  <svg class="hero-wave" viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path class="wave-path-1" d="M0,60 C200,20 400,90 600,50 C800,10 1000,70 1200,40 C1400,10 1440,50 1440,60 L1440,120 L0,120 Z" fill="#faf7f2"/>
+    <path class="wave-path-2" d="M0,80 C180,50 380,100 600,70 C820,40 1020,90 1200,65 C1380,40 1440,75 1440,80 L1440,120 L0,120 Z" fill="rgba(250,247,242,0.35)"/>
+  </svg>
+</section>
+
+<!-- INTRO -->
+<section id="intro">
+  <div class="container">
+    <div class="intro-grid">
+      <div class="reveal">
+        <p class="intro-label">The Spring Tide Effect</p>
+        <h2 class="section-title">The oceans move<br><em>in perfect sync</em></h2>
+        <p class="body-text">
+          The ocean is often a chaotic place, with swells, currents and tides unleashing uncontested strength upon the coast and open sea.
+        </p>
+        <p class="body-text">
+          But there's a moment when everything aligns — the Earth, the moon and the sun pull together in perfect synergy, summoning a phenomenon called the spring tide. Twice a month, the oceans swell higher and retreat lower than usual, carried by the collective gravitational force of celestial bodies working in harmony. It's a lesson in timing, alignment and amplification.
+        </p>
+        <p class="body-text">
+          Spring Tide Strategies harnesses the power of strategic communication to connect your business to your audiences, powering you to unprecedented levels of success.
+        </p>
+      </div>
+      <div class="intro-visual reveal reveal-delay-2">
+        <img src="https://images.squarespace-cdn.com/content/v1/67feaddaf6b3024d6d2f3d3e/559234c3-84e1-45d2-9f30-b546b658ff4b/image14.jpeg" alt="Ocean waves — the spring tide effect">
+        <div class="intro-visual-overlay"></div>
+        <div class="tide-stat-group">
+          <div class="tide-stat">
+            <div class="tide-stat-num">32</div>
+            <div class="tide-stat-label">Years Experience</div>
+          </div>
+          <div class="tide-stat">
+            <div class="tide-stat-num">22</div>
+            <div class="tide-stat-label">Aerospace and Defense</div>
+          </div>
+          <div class="tide-stat">
+            <div class="tide-stat-num">100%</div>
+            <div class="tide-stat-label">Invested in Clients</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="services-header reveal">
+      <p class="intro-label">What We Do</p>
+      <h2 class="section-title" style="color:var(--white);">Complete Strategic<br><em style="color:var(--aqua);">Communication Services</em></h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-num">01</div>
+        <div class="service-name">Strategic Communication Consulting and Planning</div>
+        <div class="service-desc">End-to-end strategic frameworks built to align your message, medium and moment.</div>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-num">02</div>
+        <div class="service-name">Integrated Communication Plan Creation</div>
+        <div class="service-desc">Cohesive plans that unify every channel under a single strategic vision.</div>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-num">03</div>
+        <div class="service-name">Crisis Communication</div>
+        <div class="service-desc">Clear, confident response strategies that protect reputation when it matters most.</div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">04</div>
+        <div class="service-name">Web Content and SEO</div>
+        <div class="service-desc">Search-optimized content that speaks to human audiences first.</div>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-num">05</div>
+        <div class="service-name">PR and Media Relations</div>
+        <div class="service-desc">News releases, pitch strategy, and earned media relationships that amplify your story.</div>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-num">06</div>
+        <div class="service-name">Marketing and Advertising Strategy</div>
+        <div class="service-desc">Targeted campaigns that convert audiences into advocates.</div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">07</div>
+        <div class="service-name">Event Communication</div>
+        <div class="service-desc">Narrative-driven event strategy from pre-launch through post-event coverage.</div>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-num">08</div>
+        <div class="service-name">Public Affairs and Government Engagement</div>
+        <div class="service-desc">Policy communication rooted in Congressional-level experience.</div>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-num">09</div>
+        <div class="service-name">Advocacy Communication</div>
+        <div class="service-desc">Messages that move stakeholders, policymakers and the public to action.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI SECTION -->
+<section id="ai">
+  <div class="ai-bg-image"></div>
+  <div class="container">
+    <div class="ai-grid">
+      <div class="reveal">
+        <div class="ai-badge"><span class="ai-dot"></span> AI-Enhanced</div>
+        <h2 class="section-title">Powered by AI,<br><em>Crafted by Expertise</em></h2>
+        <p class="body-text">
+          Spring Tide Strategies taps into artificial intelligence to support all strategic communication activities — creating plans and campaigns more efficiently and delivering results more quickly.
+        </p>
+        <p class="body-text" style="margin-top:1rem;">
+          What we don't do is use AI text directly for content. AI writing does not meet the standards of communication excellence that Spring Tide Strategies adheres to. AI bolsters our process; human expertise drives the final product.
+        </p>
+      </div>
+      <div class="reveal reveal-delay-2" style="display:flex;flex-direction:column;gap:1rem;">
+        <div style="background:var(--white);border-radius:4px;padding:1.8rem;border-left:3px solid var(--aqua);">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--navy);margin-bottom:0.5rem;font-weight:600;">AI for Efficiency</div>
+          <p style="font-size:0.85rem;color:#5a6a7a;line-height:1.6;font-weight:300;">Accelerated research, competitive analysis, and strategic ideation — delivered faster without compromising quality.</p>
+        </div>
+        <div style="background:var(--white);border-radius:4px;padding:1.8rem;border-left:3px solid var(--gold);">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--navy);margin-bottom:0.5rem;font-weight:600;">Human Excellence for Output</div>
+          <p style="font-size:0.85rem;color:#5a6a7a;line-height:1.6;font-weight:300;">Every deliverable is written, refined and approved by an experienced communication professional. No exceptions.</p>
+        </div>
+        <div style="background:var(--white);border-radius:4px;padding:1.8rem;border-left:3px solid var(--ocean);">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--navy);margin-bottom:0.5rem;font-weight:600;">Results That Perform</div>
+          <p style="font-size:0.85rem;color:#5a6a7a;line-height:1.6;font-weight:300;">The highest-quality content at optimal speed — giving your business a competitive advantage in the marketplace.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE — shell photo background -->
+<section id="expertise">
+  <div class="expertise-bg" style="background-image: url('image18_cropped.jpeg');"></div>
+  <div class="expertise-overlay"></div>
+  <div class="expertise-inner">
+    <div style="text-align:center;" class="reveal">
+      <p class="intro-label">Core Competencies</p>
+      <h2 class="section-title">Areas of <em>Deep Expertise</em></h2>
+    </div>
+    <div class="expertise-grid">
+      <div class="exp-card reveal">
+        <div class="exp-icon">✦</div>
+        <div class="exp-name">Brand Storytelling</div>
+      </div>
+      <div class="exp-card reveal reveal-delay-1">
+        <div class="exp-icon">✦</div>
+        <div class="exp-name">Writing and Editing</div>
+      </div>
+      <div class="exp-card reveal reveal-delay-2">
+        <div class="exp-icon">✦</div>
+        <div class="exp-name">Content Creation</div>
+      </div>
+      <div class="exp-card reveal reveal-delay-3">
+        <div class="exp-icon">✦</div>
+        <div class="exp-name">External Communications</div>
+      </div>
+      <div class="exp-card reveal">
+        <div class="exp-icon">✦</div>
+        <div class="exp-name">Internal and Executive Communication</div>
+      </div>
+      <div class="exp-card reveal reveal-delay-1">
+        <div class="exp-icon">✦</div>
+        <div class="exp-name">Speechwriting</div>
+      </div>
+      <div class="exp-card reveal reveal-delay-2">
+        <div class="exp-icon">✦</div>
+        <div class="exp-name">Marketing and Advertising</div>
+      </div>
+      <div class="exp-card reveal reveal-delay-3">
+        <div class="exp-icon">✦</div>
+        <div class="exp-name">Project Communication</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container" style="position:relative;">
+    <p class="intro-label reveal" style="color:var(--aqua);">Let's Work Together</p>
+    <h2 class="section-title reveal" style="color:var(--white);">Ready to <em>Amplify<br>Your Message?</em></h2>
+    <p class="contact-sub reveal">Interested in working together? We'd love to hear from you.</p>
+    <a href="mailto:connect@springtidestrategies.com" class="btn-primary reveal">Send a Message</a>
+    <div class="contact-details reveal">
+      <div class="contact-item">
+        <div class="contact-label">Location</div>
+        <div class="contact-value">Florida's Space Coast and Worldwide</div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-label">Email</div>
+        <div class="contact-value"><a href="mailto:connect@springtidestrategies.com">connect@springtidestrategies.com</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-label">Phone</div>
+        <div class="contact-value"><a href="tel:2028348301">202.834.8301</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Spring Tide Strategies, LLC</div>
+  <div class="footer-copy">© 2025 Spring Tide Strategies. All rights reserved.</div>
+</footer>
+
+<script>
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
