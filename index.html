@@ -68,7 +68,7 @@
   }
   .hero-video {
     position: absolute; inset: 0;
-    width: 100%; height: 100%; object-fit: cover; opacity: 0.52;
+    width: 100%; height: 100%; object-fit: cover; opacity: 0.39;
   }
   .hero-bg {
     position: absolute; inset: 0;
@@ -185,22 +185,50 @@
   .service-card:hover::after { transform: scaleX(1); }
   .service-num {
     font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300;
-    color: rgba(62,198,198,0.19); line-height: 1; margin-bottom: 1rem;
+    color: rgba(62,198,198,0.14); line-height: 1; margin-bottom: 1rem;
   }
   .service-name { font-size: 0.9rem; font-weight: 500; color: var(--white); line-height: 1.4; margin-bottom: 0.5rem; }
   .service-desc { font-size: 0.8rem; color: rgba(255,255,255,0.45); line-height: 1.6; font-weight: 300; }
 
   /* AI SECTION */
-  #ai { background: var(--sand); position: relative; }
-  .ai-bg-image { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0.07; }
+  #ai { background: var(--navy); position: relative; overflow: hidden; }
+  .ai-bg-image {
+    position: absolute; inset: 0;
+    background-image: url('https://images.squarespace-cdn.com/content/v1/67feaddaf6b3024d6d2f3d3e/5f5b26df-c523-4e25-aacf-1d805c3373c8/unsplash-image-_0iV9LmPDn0.jpg');
+    background-size: cover; background-position: center; opacity: 0.10;
+  }
+  #ai::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 70% 70% at 80% 50%, rgba(62,198,198,0.08) 0%, transparent 70%);
+  }
   .ai-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
   .ai-badge {
     display: inline-flex; align-items: center; gap: 0.6rem;
-    background: var(--navy); color: var(--aqua); padding: 0.4rem 1rem; border-radius: 100px;
+    background: rgba(62,198,198,0.15); color: var(--aqua); padding: 0.4rem 1rem; border-radius: 100px;
     font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; margin-bottom: 1.5rem;
+    border: 1px solid rgba(62,198,198,0.3);
   }
   .ai-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--aqua); animation: pulse 2s infinite; }
   @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+  /* CONTACT */
+  #contact { background: var(--deep); text-align: center; position: relative; overflow: hidden; }
+  #contact::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(14,77,110,0.6) 0%, transparent 70%);
+  }
+  #contact .container { position: relative; z-index: 1; }
+  #contact .intro-label { color: var(--aqua) !important; }
+  #contact .section-title { color: var(--white) !important; text-align: center; }
+  #contact .section-title em { color: var(--aqua) !important; }
+  .contact-sub { color: rgba(255,255,255,0.75); font-size: 1rem; font-weight: 300; max-width: 500px; margin: 0 auto 2.5rem; line-height: 1.7; }
+  .contact-form { max-width: 580px; margin: 0 auto 3rem; text-align: left; }
+  .contact-details { display: flex; justify-content: center; gap: 3rem; margin-top: 3rem; flex-wrap: wrap; }
+  .contact-item { text-align: center; }
+  .contact-label { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--aqua); margin-bottom: 0.4rem; }
+  .contact-value { font-size: 0.95rem; color: rgba(255,255,255,0.85); font-weight: 300; }
+  .contact-value a { color: inherit; text-decoration: none; }
+  .contact-value a:hover { color: var(--aqua); }
 
   /* ABOUT */
   #about { background: var(--white); }
@@ -276,20 +304,15 @@
     display: none; text-align: center; padding: 1.2rem;
     background: rgba(62,198,198,0.1); border: 1px solid rgba(62,198,198,0.3);
     border-radius: 4px; color: var(--aqua); font-size: 0.95rem; margin-top: 1rem;
-  } background: var(--navy); text-align: center; position: relative; overflow: hidden; }
-  #contact::before {
-    content: ''; position: absolute; bottom: -300px; left: 50%; transform: translateX(-50%);
-    width: 800px; height: 800px; background: radial-gradient(circle, rgba(62,198,198,0.08) 0%, transparent 65%);
   }
-  #contact .section-title { color: var(--white); }
-  #contact .section-title em { color: var(--aqua); }
-  .contact-sub { color: rgba(255,255,255,0.55); font-size: 1rem; font-weight: 300; max-width: 500px; margin: 0 auto 2.5rem; line-height: 1.7; }
-  .contact-details { display: flex; justify-content: center; gap: 3rem; margin-top: 3rem; flex-wrap: wrap; }
-  .contact-item { text-align: center; }
-  .contact-label { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--aqua); margin-bottom: 0.4rem; }
-  .contact-value { font-size: 0.95rem; color: rgba(255,255,255,0.8); font-weight: 300; }
-  .contact-value a { color: inherit; text-decoration: none; }
-  .contact-value a:hover { color: var(--aqua); }
+
+  /* AI cards on dark background */
+  .ai-feature-card { background: rgba(255,255,255,0.06); border-radius: 4px; padding: 1.8rem; margin-bottom: 1rem; border: 1px solid rgba(255,255,255,0.08); }
+  .ai-feature-card-t { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--white); margin-bottom: 0.4rem; font-weight: 600; }
+  .ai-feature-card-d { font-size: 0.85rem; color: rgba(255,255,255,0.6); line-height: 1.6; font-weight: 300; }
+  #ai .section-title { color: var(--white); }
+  #ai .section-title em { color: var(--aqua); }
+  #ai .body-text { color: rgba(255,255,255,0.7); }
 
   /* FOOTER */
   footer { background: #060e1a; padding: 2rem 4rem; display: flex; align-items: center; justify-content: space-between; }
@@ -345,6 +368,15 @@
 
 <!-- HERO -->
 <section id="hero">
+  <!-- YouTube fallback (plays on GitHub Pages where mp4 may not autoplay) -->
+  <div style="position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;">
+    <iframe
+      src="https://www.youtube.com/embed/-RTKUfAaXfM?autoplay=1&mute=1&loop=1&playlist=-RTKUfAaXfM&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
+      allow="autoplay; encrypted-media"
+      style="position:absolute;top:50%;left:50%;width:177.78vh;height:100vh;min-width:100%;min-height:56.25vw;transform:translate(-50%,-50%);opacity:0.39;border:0;"
+    ></iframe>
+  </div>
+  <!-- Local video (plays when served locally or from Netlify) -->
   <video class="hero-video" autoplay muted loop playsinline>
     <source src="Sunrise_image_video.mp4" type="video/mp4">
   </video>
@@ -477,17 +509,17 @@
         </p>
       </div>
       <div class="reveal reveal-delay-2" style="display:flex;flex-direction:column;gap:1rem;">
-        <div style="background:var(--white);border-radius:4px;padding:1.8rem;border-left:3px solid var(--aqua);">
-          <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--navy);margin-bottom:0.5rem;font-weight:600;">AI for Efficiency</div>
-          <p style="font-size:0.85rem;color:#5a6a7a;line-height:1.6;font-weight:300;">Accelerated research, competitive analysis, and strategic ideation — delivered faster without compromising quality.</p>
+        <div class="ai-feature-card" style="border-left:3px solid var(--aqua);">
+          <div class="ai-feature-card-t">AI for Efficiency</div>
+          <p class="ai-feature-card-d">Accelerated research, competitive analysis, and strategic ideation — delivered faster without compromising quality.</p>
         </div>
-        <div style="background:var(--white);border-radius:4px;padding:1.8rem;border-left:3px solid var(--gold);">
-          <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--navy);margin-bottom:0.5rem;font-weight:600;">Human Excellence for Output</div>
-          <p style="font-size:0.85rem;color:#5a6a7a;line-height:1.6;font-weight:300;">Every deliverable is written, refined and approved by an experienced communication professional. No exceptions.</p>
+        <div class="ai-feature-card" style="border-left:3px solid var(--gold);">
+          <div class="ai-feature-card-t">Human Excellence for Output</div>
+          <p class="ai-feature-card-d">Every deliverable is written, refined and approved by an experienced communication professional. No exceptions.</p>
         </div>
-        <div style="background:var(--white);border-radius:4px;padding:1.8rem;border-left:3px solid var(--ocean);">
-          <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--navy);margin-bottom:0.5rem;font-weight:600;">Results That Perform</div>
-          <p style="font-size:0.85rem;color:#5a6a7a;line-height:1.6;font-weight:300;">The highest-quality content at optimal speed — giving your business a competitive advantage in the marketplace.</p>
+        <div class="ai-feature-card" style="border-left:3px solid var(--ocean);">
+          <div class="ai-feature-card-t">Results That Perform</div>
+          <p class="ai-feature-card-d">The highest-quality content at optimal speed — giving your business a competitive advantage in the marketplace.</p>
         </div>
       </div>
     </div>
@@ -542,9 +574,9 @@
 
 <!-- CONTACT -->
 <section id="contact">
-  <div class="container" style="position:relative;">
-    <p class="intro-label reveal" style="color:var(--aqua);">Let's Work Together</p>
-    <h2 class="section-title reveal" style="color:var(--white);">Ready to <em>Amplify<br>Your Message?</em></h2>
+  <div class="container">
+    <p class="intro-label reveal" style="color:var(--aqua);text-align:center;">Let's Work Together</p>
+    <h2 class="section-title reveal" style="color:var(--white);text-align:center;">Ready to <em>Amplify<br>Your Message?</em></h2>
     <p class="contact-sub reveal">Interested in working together? Fill out the form and we'll be in touch.</p>
 
     <form class="contact-form reveal" action="https://formspree.io/f/xbdwqevg" method="POST">
