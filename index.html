@@ -257,7 +257,71 @@
     padding: 0.35rem 0.85rem; border-radius: 2px; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.05em;
   }
 
-  /* EXPERTISE with shell background */
+  /* CLIENTS CAROUSEL */
+  #clients { background: var(--white); }
+  .clients-header { text-align: center; margin-bottom: 3.5rem; }
+  .clients-carousel-wrap {
+    position: relative; display: flex; align-items: center; gap: 0;
+  }
+  .carousel-btn {
+    flex-shrink: 0; width: 56px; height: 56px;
+    border-radius: 50%; border: 2px solid var(--aqua);
+    background: var(--white); color: var(--aqua);
+    font-size: 1.6rem; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+    z-index: 2; box-shadow: 0 4px 16px rgba(62,198,198,0.2);
+  }
+  .carousel-btn:hover { background: var(--aqua); color: var(--white); transform: scale(1.1); }
+  .carousel-btn:disabled { opacity: 0.2; cursor: default; transform: none; box-shadow: none; }
+  .clients-track-wrap {
+    overflow: hidden; flex: 1; margin: 0 1.5rem;
+  }
+  .clients-track {
+    display: flex; gap: 1.5rem;
+    transition: transform 0.45s cubic-bezier(0.4,0,0.2,1);
+    will-change: transform;
+  }
+  .client-card {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    width: calc(25% - 1.125rem); flex-shrink: 0;
+    padding: 2rem 1.5rem;
+    border: 1px solid rgba(10,22,40,0.08); border-radius: 4px;
+    background: var(--cream); text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    box-sizing: border-box;
+  }
+  .client-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(10,22,40,0.08);
+    border-color: var(--aqua);
+  }
+  .client-logo {
+    width: 100%; max-height: 110px; object-fit: contain;
+    filter: grayscale(20%); transition: filter 0.3s;
+  }
+  .client-card:hover .client-logo { filter: grayscale(0%); }
+  .client-name {
+    font-size: 0.72rem; font-weight: 500; color: var(--ocean);
+    letter-spacing: 0.08em; text-transform: uppercase;
+    margin-top: 1rem; text-align: center;
+  }
+  .carousel-dots {
+    display: flex; justify-content: center; gap: 0.5rem; margin-top: 2rem;
+  }
+  .carousel-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: rgba(10,22,40,0.15); border: none; cursor: pointer;
+    transition: background 0.2s, transform 0.2s; padding: 0;
+  }
+  .carousel-dot.active { background: var(--aqua); transform: scale(1.3); }
+  @media (max-width: 760px) {
+    .client-card { width: calc(50% - 0.75rem); }
+  }
+  @media (max-width: 500px) {
+    .client-card { width: 100%; }
+    .carousel-btn { width: 44px; height: 44px; font-size: 1.2rem; }
+  }
   #expertise { position: relative; overflow: hidden; padding: 6rem 4rem; }
   .expertise-bg {
     position: absolute; inset: 0;
@@ -526,6 +590,73 @@
   </div>
 </section>
 
+<!-- CLIENTS -->
+<section id="clients">
+  <div class="container">
+    <div class="clients-header reveal">
+      <p class="intro-label">Who We Work With</p>
+      <h2 class="section-title">Our <em>Clients and Partners</em></h2>
+    </div>
+    <div class="clients-carousel-wrap reveal">
+      <button class="carousel-btn" id="carouselPrev" aria-label="Previous">&#8592;</button>
+      <div class="clients-track-wrap">
+        <div class="clients-track" id="clientsTrack">
+          <a href="https://brevardseniorliving.com" target="_blank" rel="noopener" class="client-card">
+            <img src="BSL_Facebook_logo.png" alt="Brevard Senior Living" class="client-logo">
+            <div class="client-name">Brevard Senior Living</div>
+          </a>
+          <a href="https://fastattackpw.com" target="_blank" rel="noopener" class="client-card">
+            <img src="https://fastattackpw.com/wp-content/uploads/2024/05/Ab_FastAttact3-01-1.png" alt="Fast Attack Pressure Washing" class="client-logo">
+            <div class="client-name">Fast Attack Pressure Washing</div>
+          </a>
+          <a href="https://www.adminallyllc.com" target="_blank" rel="noopener" class="client-card">
+            <img src="Admin_Ally_logo.png" alt="Admin Ally LLC" class="client-logo">
+            <div class="client-name">Admin Ally LLC</div>
+          </a>
+          <a href="https://www.artemisops.com" target="_blank" rel="noopener" class="client-card">
+            <img src="https://www.artemisops.com/assets/artemis-logo.png" alt="Artemis Ops" class="client-logo">
+            <div class="client-name">Artemis Ops</div>
+          </a>
+          <a href="https://curitawellness.com" target="_blank" rel="noopener" class="client-card">
+            <img src="Curita_logo.png" alt="Curita Wellness" class="client-logo">
+            <div class="client-name">Curita Wellness</div>
+          </a>
+          <a href="https://kationx.com" target="_blank" rel="noopener" class="client-card">
+            <img src="https://img1.wsimg.com/isteam/ip/a2e87bfa-39ff-435a-b34d-0e04702e013d/blob-812b9da.png" alt="Kationx" class="client-logo">
+            <div class="client-name">Kationx™</div>
+          </a>
+          <a href="https://thee3shop.com" target="_blank" rel="noopener" class="client-card">
+            <img src="https://thee3shop.com/wp-content/uploads/2025/12/e3-designs-2logo.png" alt="E3 Designs Shop" class="client-logo">
+            <div class="client-name">E3 Designs Shop</div>
+          </a>
+          <a href="https://www.purewateroutpost.com" target="_blank" rel="noopener" class="client-card">
+            <img src="https://static.wixstatic.com/media/6d83e2_e7f7e69d29a54650b55f1e30d5ae1443~mv2_d_2700_2025_s_2.png/v1/fill/w_180,h_132,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/6d83e2_e7f7e69d29a54650b55f1e30d5ae1443~mv2_d_2700_2025_s_2.png" alt="Pure Water Outpost" class="client-logo">
+            <div class="client-name">Pure Water Outpost</div>
+          </a>
+          <a href="https://swellstartups.com" target="_blank" rel="noopener" class="client-card">
+            <img src="https://staging3.swellstartups.com/wp-content/uploads/2024/04/Groundswell-Swellstartups-Logo1-300x83.png" alt="Groundswell Startups" class="client-logo">
+            <div class="client-name">Groundswell Startups</div>
+          </a>
+          <a href="https://b2g.me" target="_blank" rel="noopener" class="client-card">
+            <img src="B2G_logo.png" alt="B2G Mission Engineering" class="client-logo" style="background:var(--navy);padding:0.5rem;border-radius:3px;">
+            <div class="client-name">B²G Mission Engineering</div>
+          </a>
+          <a href="https://seamatterlabs.com" target="_blank" rel="noopener" class="client-card">
+            <img src="Seamatter_labs_logo.png" alt="SeaMatter Labs" class="client-logo">
+            <div class="client-name">SeaMatter Labs</div>
+          </a>
+          <a href="https://www.happycollegebox.com" target="_blank" rel="noopener" class="client-card">
+            <img src="happy_college_box_logo.png" alt="Happy College Box" class="client-logo">
+            <div class="client-name">Happy College Box</div>
+          </a>
+        </div>
+      </div>
+      <button class="carousel-btn" id="carouselNext" aria-label="Next">&#8594;</button>
+    </div>
+    <div class="carousel-dots" id="carouselDots"></div>
+  </div>
+</section>
+
 <!-- EXPERTISE — shell photo background -->
 <section id="expertise">
   <div class="expertise-bg" style="background-image: url('image18_cropped.jpeg');"></div>
@@ -638,7 +769,86 @@
   }, { threshold: 0.12 });
   reveals.forEach(el => observer.observe(el));
 
-  // Handle contact form submission via Formspree AJAX
+  // CLIENTS CAROUSEL
+  const track = document.getElementById('clientsTrack');
+  const prevBtn = document.getElementById('carouselPrev');
+  const nextBtn = document.getElementById('carouselNext');
+  const dotsContainer = document.getElementById('carouselDots');
+
+  if (track) {
+    const cards = Array.from(track.children);
+    let currentIndex = 0;
+
+    function visibleCount() {
+      const w = track.parentElement.offsetWidth;
+      if (w < 500) return 1;
+      if (w < 760) return 2;
+      if (w < 1000) return 3;
+      return 4;
+    }
+
+    function setWidths() {
+      const visible = visibleCount();
+      const gap = 24;
+      const totalGap = gap * (visible - 1);
+      const cardW = (track.parentElement.offsetWidth - totalGap) / visible;
+      cards.forEach(c => {
+        c.style.width = cardW + 'px';
+        c.style.minWidth = cardW + 'px';
+        c.style.flexShrink = '0';
+      });
+    }
+
+    function totalSlides() {
+      return Math.ceil(cards.length / visibleCount());
+    }
+
+    function buildDots() {
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < totalSlides(); i++) {
+        const dot = document.createElement('button');
+        dot.className = 'carousel-dot' + (i === currentIndex ? ' active' : '');
+        dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+        dot.addEventListener('click', () => goTo(i));
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    function goTo(index) {
+      const total = totalSlides();
+      currentIndex = Math.max(0, Math.min(index, total - 1));
+      const visible = visibleCount();
+      const gap = 24;
+      const cardW = (track.parentElement.offsetWidth - gap * (visible - 1)) / visible;
+      const offset = currentIndex * visible * (cardW + gap);
+      track.style.transform = `translateX(-${offset}px)`;
+      prevBtn.disabled = currentIndex === 0;
+      nextBtn.disabled = currentIndex >= total - 1;
+      dotsContainer.querySelectorAll('.carousel-dot').forEach((d, i) => {
+        d.classList.toggle('active', i === currentIndex);
+      });
+    }
+
+    function init() {
+      setWidths();
+      buildDots();
+      goTo(0);
+    }
+
+    prevBtn.addEventListener('click', () => goTo(currentIndex - 1));
+    nextBtn.addEventListener('click', () => goTo(currentIndex + 1));
+
+    // Touch/swipe support
+    let touchStartX = 0;
+    track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend', e => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) diff > 0 ? goTo(currentIndex + 1) : goTo(currentIndex - 1);
+    });
+
+    window.addEventListener('resize', init);
+    init();
+  }
   const form = document.querySelector('.contact-form');
   const successMsg = document.getElementById('formSuccess');
   if (form) {
